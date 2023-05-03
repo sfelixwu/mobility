@@ -85,8 +85,9 @@ int
 myFile2JSON
 (char *f_name, Json::Value * jv_ptr)
 {
-
   char *json_str = myFile2String(f_name);
+  if (json_str == NULL) return -1;
+  
   int rc = myParseJSON(json_str, jv_ptr);
   free(json_str);
   return rc;

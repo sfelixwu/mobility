@@ -17,7 +17,7 @@
         "params": {
             "action": "remote_call",
 	    "class_id": "Message",
-	    "object_id": "team_name",
+	    "object_id": "team_name"
         },
         "returns": {
             "action": "call",

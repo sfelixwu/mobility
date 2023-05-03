@@ -5,6 +5,7 @@
 // ecs36b_Common.h
 
 #include <strings.h>
+#include <cstring>
 #include <string>
 #include <iostream>
 #include <stdio.h>

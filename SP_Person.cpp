@@ -50,6 +50,13 @@ SP_Person::JSON2Object
       return false;
     }
 
+  if (((arg_jv["class_name"]).isNull() == true) ||
+      ((arg_jv["class_name"]).isString() == false) ||
+      ((arg_jv["class_name"]).asString() != this->class_name))
+    {
+      return false;
+    }
+  
   if (((arg_jv["avatar name"]).isNull() == true) ||
       ((arg_jv["avatar name"]).isString() != true))
     {

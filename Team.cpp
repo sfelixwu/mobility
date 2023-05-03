@@ -54,6 +54,15 @@ Team::JSON2Object
       return false;
     }
 
+  if (((input_json["class_name"]).isNull() == true) ||
+      ((input_json["class_name"]).isString() == false) ||
+      ((input_json["class_name"]).asString() != this->class_name))
+    {
+      return false;
+    }
+  
+
+  
   if (((input_json["name"]).isNull() == true) ||
       ((input_json["members"]).isNull() == true) ||
       ((input_json["name"]).isString() == false) ||

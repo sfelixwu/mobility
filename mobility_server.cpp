@@ -49,6 +49,14 @@ Mymobility_Server::send
 (const std::string& action, const std::string& class_id,
  const Json::Value& json_object, const std::string& object_id)
 {
+  Json::Value input_json;
+  input_json["input"] = "input";
+  input_json["action"] = action;
+  input_json["class_id"] = class_id;
+  input_json["object_id"] = class_id;
+  input_json["json_object"] = json_object;
+  myPrintLog(input_json.toStyledString(), "./log/ecs36b_server.log");
+  
   int error_code = 0;
   Json::Value result;
   std::string strJson;
@@ -84,7 +92,7 @@ Mymobility_Server::send
       char *s_ptr = s;
       snprintf(s, strlen(object_id.c_str()) + 17,
 	       "./objects/%s.json", object_id.c_str());
-  
+
       Json::Value jv = json_object;
       myJSON2File(s_ptr, &jv);
       result["status"] = "successful";
@@ -100,6 +108,13 @@ Mymobility_Server::dump2JSON
 (const std::string& action, const std::string& class_id,
  const std::string& object_id)
 {
+  Json::Value input_json;
+  input_json["input"] = "input";
+  input_json["action"] = action;
+  input_json["class_id"] = class_id;
+  input_json["object_id"] = class_id;
+  myPrintLog(input_json.toStyledString(), "./log/ecs36b_server.log");
+  
   int error_code = 0;
   Json::Value result;
   std::string strJson;
@@ -151,7 +166,7 @@ Mymobility_Server::dump2JSON
 
 int main()
 {
-  HttpServer httpserver(7374);
+  HttpServer httpserver(8384);
   Mymobility_Server s(httpserver,
 		JSONRPC_SERVER_V1V2); // hybrid server (json-rpc 1.0 & 2.0)
   s.StartListening();

@@ -13,8 +13,8 @@ class Message
  private:
  protected:
  public:
-  Commutable& from;
-  Commutable& to;
+  Commutable& from;   // Another& from;
+  Commutable& to;     // Another& to;
   Json::Value content;
 
   Message(Commutable& _f, Commutable& _t): from {_f}, to {_t} {};

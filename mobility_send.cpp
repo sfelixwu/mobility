@@ -37,7 +37,9 @@ main()
   std::cout << jv_message.toStyledString() << std::endl;
 
   // okay, going for the server
-  HttpClient httpclient("http://127.0.0.1:7374"); // replace here with the ngrok link
+  HttpClient httpclient("https://40b8-2601-200-c000-39f0-616c-7ba7-6e23-e672.ngrok-free.app");
+  // replace here with the ngrok link
+  // HttpClient httpclient("http://127.0.0.1:7374"); // replace here with the ngrok link
   mobility_Client myClient(httpclient, JSONRPC_CLIENT_V2);
   Json::Value myv;
 

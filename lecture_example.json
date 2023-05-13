@@ -1,0 +1,28 @@
+{
+	"content" : 
+	{
+		"body" : "just a body",
+		"header" : "ecs36b participation on 05/01/2023"
+	},
+	"from" : 
+	{
+		"class name" : "Team",
+		"members" : 
+		[
+			{
+				"avatar name" : "John",
+				"class name" : "SP_Person"
+			},
+			{
+				"avatar name" : "Helen",
+				"class name" : "SP_Person"
+			}
+		],
+		"name" : "fire_ball"
+	},
+	"to" : 
+	{
+		"avatar name" : "whoever",
+		"class name" : "SP_Person"
+	}
+}

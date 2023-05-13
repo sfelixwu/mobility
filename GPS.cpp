@@ -172,7 +172,6 @@ bool
 GPS_DD::JSON2Object
 (Json::Value arg_jv)
 {
-
   if ((arg_jv.isNull() == true) ||
       (arg_jv.isObject() != true))
     {

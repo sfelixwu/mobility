@@ -1,0 +1,29 @@
+  Json::Value myv_r;
+  Record r; // the original record object
+  // I have a Record C++ object called r
+  myv_r = r.dump2JSON(); // dump the content of the obejct into JSON format
+  // now I have a Record JSON objecy called myv_r
+
+  // name of the file I like to save
+  char buff[128];
+  snprintf(buff, strlen("./record_r.json") + 1, "./record_r.json");
+
+  // my file name for the object myv_r is stored in buff
+  int rc = myJSON2File(buff, &myv_r); // save the JSON (content) into a file
+  // save the JSON object myv_r to file buff
+
+  // reverse direction (File ==> JSON ==> C++ Recoerd)
+  Json::Value another_myv;  // reversed direction JSON object of r
+  rc = myFile2JSON(buff, &another_myv); // reload the content of the object from file (in JSON)
+  // at this moment, File ==> JSON done
+  // remaining JSON ==> C++ Record Object
+
+  Record r_another; // brand new, has nothing in it
+  bool b = r_another.JSON2Object(another_myv); //
+
+  // the content of r and r_another should be identical
+  Json:::Value jv2 = r_another.dump2JSON();
+
+  // myv_r should be identical to jv2
+  
+  

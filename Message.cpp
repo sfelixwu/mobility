@@ -51,6 +51,26 @@ Message::JSON2Object
       br = lv_t_ptr->JSON2Object(input_json["from"]);
       if (br == false) return false;
       ((Team&) this->from) = *lv_t_ptr;
+
+      // create an empty TEAM object
+      // call JSON2Object on the TEAM object (pass the "from" portion of JSON into the TEAM)
+      // copy the TEAM object (its content) into this->from
+
+      "who" :
+	{
+	  "person1": {..},
+	  "person2": {...}
+	}
+
+      Person p1, p2;
+      (this->who1).JSON2Object(arg_jv[who]["person1"]);
+      
+      who1 = p1;
+      p2.JSON2Object(arg_jv[who]["person2"]);
+      who2 = p2;
+      
+      (this->thing1).type = (arg_jv["thing1"]["type"]).asString();
+      
     }
   else
     {

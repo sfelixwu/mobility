@@ -23,9 +23,6 @@ main()
   mobility_Client myClient(httpclient, JSONRPC_CLIENT_V2);
   Json::Value myv;
 
-  // below was the code I presented during OH
-#ifdef _OH_MODIFICATION_
-  
   myv["class_name"] = "ecs36b";
   myv["concern"] = "hw4";
   myv["numberofst"] = 9;
@@ -49,13 +46,11 @@ main()
 
   Json:::Value jv2 = r_another.dump2JSON();
 
-#endif /* _OH_MODIFICATION_ */
-    
   try {
-    myv = myClient.dump2JSON("dump2JSON", "Message", my_team_name);
+    // myv = myClient.dump2JSON("dump2JSON", "Message", my_team_name);
   } catch (JsonRpcException &e) {
     cerr << e.what() << endl;
   }
-  std::cout << myv.toStyledString() << std::endl;  
+  // std::cout << myv.toStyledString() << std::endl;  
   return 0;
 }
